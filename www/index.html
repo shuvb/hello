@@ -45,29 +45,17 @@ div .kida_logo{
 <script src="js/jquery.min.js"></script>
 <script  src="cordova.js"></script>
 <script src="js/load.js"></script>
-<!-- <script src="js/index.js"></script> -->
+
 <script>
 $(document).ready(function() {
-   // alert(window.devicePixelRatio);
-   $('.kida_logo').css({'height': Math.round(Screen_height*125/640),'width': Math.round(Screen_width*205/360),  'margin-top': Math.round(Screen_height*257/640),'margin-left':Screen_width*78/360});
-	
+    $('.kida_logo').css({'height': Math.round(Screen_height*125/640),'width': Math.round(Screen_width*205/360),  'margin-top': Math.round(Screen_height*257/640),'margin-left':Screen_width*78/360});
 	$('#dimen').text('A : '+Screen_height+'  : B'+window_height+'=== C '+Screen_width+' : D '+window_width);
-	
-	
 });
 
 document.addEventListener("deviceready", onDeviceReady, false);
 	function onDeviceReady() {
       
-		if (AndroidFullScreen) {
-            
-            // Extend your app underneath the status bar (Android 4.4+ only)
-           // window.AndroidFullScreen.showUnderStatusBar();
-
-            // Extend your app underneath the system UI (Android 4.4+ only)
-          //  window.AndroidFullScreen.showUnderSystemUI();
-
-            // Hide system UI and keep it hidden (Android 4.4+ only)
+		if (window.AndroidFullScreen) {
             window.AndroidFullScreen.immersiveMode();
         }
         
@@ -75,23 +63,7 @@ document.addEventListener("deviceready", onDeviceReady, false);
 			window.StatusBar.hide();
 		};
 		
-        // window.plugins.screensize.get(successCallback, errorCallback);
-        
     }
-  
-    <!-- function successCallback(result) { -->
-      <!-- var a=Screen_height; -->
-      <!-- Screen_height=result.height;   -->
-      <!-- Screen_width=result.width; -->
-        
-      <!-- $('.kida_logo').css({'height': Math.round(Screen_height*125/640),'width': Math.round(Screen_width*205/360),  'margin-top': Math.round(Screen_height*257/640),'margin-left':Screen_width*78/360}); -->
-	
-	  <!-- $('#dimen').text('A : '+Screen_height+','+a+'  : B'+window_height+'=== C '+Screen_width+' : D '+window_width); -->
-    <!-- } -->
-    
-    <!-- function errorCallback(result) { -->
-      <!-- console.log(result); -->
-    <!-- }    -->
-	
+  	
 </script>
 </html>
